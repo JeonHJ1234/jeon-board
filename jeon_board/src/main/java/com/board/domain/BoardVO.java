@@ -16,7 +16,7 @@ public class BoardVO {
 	private int bno;
 	private String writer;
 	private String title;
-	private String contet;
+	private String content;
 	private int viewcnt;
 	private Date regdate;
 	
@@ -38,11 +38,11 @@ public class BoardVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContet() {
-		return contet;
+	public String getContent() {
+		return content;
 	}
-	public void setContet(String contet) {
-		this.contet = contet;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public int getViewcnt() {
 		return viewcnt;

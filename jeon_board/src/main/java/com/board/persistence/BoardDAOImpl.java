@@ -26,8 +26,22 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void write(BoardVO vo) throws Exception {
-	System.out.println(vo.getBno()+"/"+vo.getTitle()+"/"+vo.getWriter()+"/"+vo.getRegdate()+"/"+vo.getViewcnt());
-		this.sql.insert(namespace+".write");
+	
+		this.sql.insert(namespace+".write",vo);
+		
+	}
+
+	@Override
+	public BoardVO view(int bno) throws Exception {
+
+		return sql.selectOne(namespace+".view", bno);
+		
+	}
+
+	@Override
+	public void modify(BoardVO vo) throws Exception {
+		
+		this.sql.update(namespace+".modify",vo);
 		
 	}
 

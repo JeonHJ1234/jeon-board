@@ -10,10 +10,20 @@
    </select>
    
    <insert id="write" parameterType="com.board.domain.BoardVO">
-   	insert into myboard (bno, title, content, writer)
-   		values (bno_seq.nextval, #{title}, #{content}, #{writer})
+   	insert into myboard (bno, title, content, writer, regdate)
+   		values (bno_seq.nextval, #{title}, #{content}, #{writer}, sysdate)
    	
    </insert>
+   
+   <select id="view" parameterType="int" resultType="com.board.domain.BoardVO">
+   	select bno, title, content, writer, regDate, viewCnt
+   		from myboard where bno=#{bno}
+   </select>
+   
+   <update id="modify" parameterType="com.board.domain.BoardVO">
+   	update myboard set title=#{title}, writer=#{writer}, content=#{content} where bno=#{bno} 
+   
+   </update>
    
    
 </mapper>

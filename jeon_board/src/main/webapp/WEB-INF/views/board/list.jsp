@@ -30,7 +30,7 @@
         <c:forEach items="${list }" var="list">
             <tr>
                 <td>${list.bno}</td>
-                <td>${list.title}</td>
+                <td><a href="/board/view?bno=${list.bno}">${list.title}</td>
                 <td>${list.writer}</td>
                 <td>${list.regdate}</td>
                 <td>${list.viewcnt}</td>
