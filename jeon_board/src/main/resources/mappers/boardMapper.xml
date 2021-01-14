@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.mappers.board">
+   
+   <select id="list" resultType="com.board.domain.BoardVO">
+   	select bno, title, content, writer, regDate, viewCnt
+   		from myboard
+   </select>
+   
+   <insert id="write" parameterType="com.board.domain.BoardVO">
+   	insert into myboard (bno, title, content, writer)
+   		values (bno_seq.nextval, #{title}, #{content}, #{writer})
+   	
+   </insert>
+   
+   
+</mapper>
